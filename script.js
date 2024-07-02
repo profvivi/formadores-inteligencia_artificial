@@ -32,16 +32,8 @@ const perguntas = [
 let atual = 0;/*variável com posição zero(listas começam com posição zero),o valor mudará quando percorrermos a lista (aula4)*/ 
 let perguntaAtual;/*variável vazia, receberá o texto da pergunta. Essa variável também mudará com o tempo, recebendo o texto de diferentes perguntas.(aula4)*/ 
 
-
-/*Agora, para que possamos efetivamente mostrar a pergunta, vamos usar uma função. A primeira coisa que nossa função precisa fazer é colocar
-dentro da variável perguntaAtual o texto da pergunta. Então, vamos primeiro declarar a função: (aula4)*/
-function mostraPergunta() { /*declarar a função*/
-   /**/ if (atual >= perguntas.length) { 
-        mostraResultado();
-        return;
-    }
     perguntaAtual = perguntas[atual];/*instrução para receber o texto da pergunta atual.(aula4)*/
     caixaPerguntas.textContent = perguntaAtual.enunciado;/*alterarando o atributo textcontent e inserindo o atributo enunciado(aula4)*/ 
-    caixaAlternativas.textContent = "";
+   
     mostraAlternativas();/*chamar a função (aula4)*/
 }
