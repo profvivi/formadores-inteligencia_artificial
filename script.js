@@ -10,11 +10,11 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
-                afirmação:"Intervir e defender a vítima, conversar com o agressor."
+                afirmação:"afirmação1"
             },
             {
                 texto:"Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
-                afirmação:"Intervir e defender a vítima, conversar com o agressor."
+                afirmação:"afirmação1"
             }
            // "Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
            // "Intervir e defender a vítima, conversar com o agressor."
@@ -25,12 +25,11 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Eu não pratico esportes da maneira convencional, mas amo o esporte como meio para socialização.",
-                afirmação:"O esporte é uma atividade competitiva que tem regras fixas e treinamentos e pratico regularmente."
+                afirmação:"afirmação2"
             },
             {
                 texto:"Eu não pratico esportes da maneira convencional, mas amo o esporte como meio para socialização.",
-                afirmação:"O esporte é uma atividade competitiva que tem regras fixas e treinamentos e pratico regularmente."
-            }
+                afirmação:"afirmação2"
            // "Eu não pratico esportes da maneira convencional, mas amo o esporte como meio para socialização.",
  
             //"O esporte é uma atividade competitiva que tem regras fixas e treinamentos e pratico regularmente."
@@ -41,11 +40,11 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Investiria em energia solar", 
-                afirmação: "Iria dar continuade ao uso da energia hidrelétrica"
+                afirmação: "afirmação3"
             },
             {
                 texto:"Investiria em energia solar", 
-                afirmação: "Iria dar continuade ao uso da energia hidrelétrica"
+                afirmação: "afirmação3"
             }
            // "Investiria em energia solar", 
            // "Iria dar continuade ao uso da energia hidrelétrica"
