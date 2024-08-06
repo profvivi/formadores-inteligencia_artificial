@@ -32,8 +32,32 @@ const perguntas = [
 let atual = 0;/*variável com posição zero(listas começam com posição zero),o valor mudará quando percorrermos a lista (aula4)*/ 
 let perguntaAtual;/*variável vazia, receberá o texto da pergunta. Essa variável também mudará com o tempo, recebendo o texto de diferentes perguntas.(aula4)*/ 
 
-    perguntaAtual = perguntas[atual];/*instrução para receber o texto da pergunta atual.(aula4)*/
-    caixaPerguntas.textContent = perguntaAtual.enunciado;/*alterarando o atributo textcontent e inserindo o atributo enunciado(aula4)*/ 
-   
-    mostraPergunta();/*chamar a função (aula4)*/
+function mostraPergunta(){
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
 }
+
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", function(){
+            atual++;
+            mostraPergunta();
+        });
+
+        caixaAlternativas.appendChild(botaoAlternativas);
+
+    }
+
+}
+
+mostraPergunta();
+
+    //perguntaAtual = perguntas[atual];/*instrução para receber o texto da pergunta atual.(aula4)*/
+    //caixaPerguntas.textContent = perguntaAtual.enunciado;/*alterarando o atributo textcontent e inserindo o atributo enunciado(aula4)*/ 
+   
+    //mostraPergunta();/*chamar a função (aula4)*/
