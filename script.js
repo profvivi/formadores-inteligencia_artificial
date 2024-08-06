@@ -55,9 +55,3 @@ function mostraAlternativas(){
 
 }
 
-mostraPergunta();
-
-    //perguntaAtual = perguntas[atual];/*instrução para receber o texto da pergunta atual.(aula4)*/
-    //caixaPerguntas.textContent = perguntaAtual.enunciado;/*alterarando o atributo textcontent e inserindo o atributo enunciado(aula4)*/ 
-   
-    //mostraPergunta();/*chamar a função (aula4)*/
