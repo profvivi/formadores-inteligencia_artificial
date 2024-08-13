@@ -59,27 +59,31 @@ const perguntas = [
 
 let atual = 0;/*variável com posição zero(listas começam com posição zero),o valor mudará quando percorrermos a lista (aula4)*/ 
 let perguntaAtual;/*variável vazia, receberá o texto da pergunta. Essa variável também mudará com o tempo, recebendo o texto de diferentes perguntas.(aula4)*/ 
+let historiaFinal = "";
 
 function mostraPergunta(){
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-
     caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
 
 function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas){
-       const botaoAlternativas = document.createElement("button");
+        const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-       botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-            atual++;
-            mostraPergunta();
-        });
-
-        caixaAlternativas.appendChild(botaoAlternativas);
-
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas)
     }
-
 }
+
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacao = opcaoSelecionada.afirmacoes;
+    historiaFinal = afirmacao;
+    atual++;
+    mostraPergunta();
+}
+
+
+mostraPergunta();
 
