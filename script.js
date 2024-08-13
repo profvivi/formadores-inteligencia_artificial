@@ -10,7 +10,7 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
-                afirmação:"Intervir e defender a vítima, conversar com o agressor."
+                afirmação:"afirmação1" //inserir a afirmação
             },
             {
                 texto:"Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
