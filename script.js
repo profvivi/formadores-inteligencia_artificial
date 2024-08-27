@@ -6,62 +6,55 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "O que fazer quando  identificar que uma criança está sofrendo bullying?",
+        enunciado: "A energia solar é uma fonte de energia renovável e sustentável que é obtida apartir da luz do sol. Diante disso: ",
         alternativas: [
             {
-                texto:"Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
-                afirmação:"afirmação1" //inserir a afirmação
+                texto: "Você investiria em energia solar?",
+                afirmacao: "Você é uma pessoa preocupada com o meio ambiente e pensa na economia ao longo prazo, bem como energia limpa e renovável."
             },
             {
-                texto:"Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
-                afirmação:"afirmação1"
-            },
-           // "Reportar imediatamente à equipe escolar e oferecer apoio emocional, garantindo que o aluno saiba que tem suporte e não está sozinho.", 
-           // "Intervir e defender a vítima, conversar com o agressor."
-    
-        ],
-    },
-    {
-    
-        enunciado: 
-        "A prática regular  de um esporte melhora  o condicionamento físico e a socialização. Você pratica algum esporte regularmente?",
-        alternativas: [
-            {
-                texto:"Eu não pratico esportes da maneira convencional, mas amo o esporte como meio para socialização.",
-                afirmação:"afirmação2"
-            },
-            {
-                texto:"Eu não pratico esportes da maneira convencional, mas amo o esporte como meio para socialização.",
-                afirmação:"afirmação2"
-            },
-           // "Eu não pratico esportes da maneira convencional, mas amo o esporte como meio para socialização.",
- 
-            //"O esporte é uma atividade competitiva que tem regras fixas e treinamentos e pratico regularmente."
+                texto: "Você continua com a energia hidreelétrica?",
+                afirmacao: "Você é resistente a mudanças e prefere a praticidade da energia que conhece "
+            }
         ]
     },
     {
-    
-        enunciado: "A energia solar é uma fonte de energia renovável e sustentável que é obtida a partir da luz do sol. Diante disso eu:",
+        enunciado: "Pensando em energia renovável e sustentável, e em recursos naturais inesgotáveis ",
         alternativas: [
             {
-                texto:"Investiria em energia solar", 
-                afirmação: "afirmação3"
+                texto: "Você pensa na energia solar como renovável e sustentável",
+                afirmacao: "Esta fonte aproveita a radiação solar ou o calor para gerar eletricidade, o que a torna uma alternativa limpa e sustentável às fontes de energia convencionais que emitem poluentes atmosféricos",
             },
             {
-                texto:"Investiria em energia solar", 
-                afirmação: "afirmação3"
-            },
-           // "Investiria em energia solar", 
-           // "Iria dar continuade ao uso da energia hidrelétrica"
+                texto: "Acredita que a energia hidreelétrica é uma energia renovável e sustentável",
+                afirmacao: " é uma energia renovável - ilimitada no tempo - porque são as suas fontes que se renovam, ou seja, rios e riachos alimentados pelo ciclo natural da água. "
+            }
         ]
-    }  
+    },
+    {
+        enunciado: "Refletindo em vantagens  entre a energia solar e hidreelétrica ",
+        alternativas: [
+            {
+                texto: "Acredita nos pontos positivos da energia solar",
+                afirmacao: "A energia solar não polui, é renovável, limpa e silenciosa, pode ser usada em áreas isoladas da rede elétrica, necessidade mínima de manutenção, muito fácil de instalar e é barato para manter"
+            },
+            {
+                texto: "Defende a ideia nas vantagens da energia hidreelétrica",
+                afirmacao: "As principais vantagens para promover a energia hidrelétrica é a alta produção de energia dos seus projetos, por meio das barragens, e na geração elétrica sustentável por meio de uma fonte renovável, que é a água. "
+            }
+        ]
+    },
 ];
 
-let atual = 0;/*variável com posição zero(listas começam com posição zero),o valor mudará quando percorrermos a lista (aula4)*/ 
-let perguntaAtual;/*variável vazia, receberá o texto da pergunta. Essa variável também mudará com o tempo, recebendo o texto de diferentes perguntas.(aula4)*/ 
+let atual = 0;
+let perguntaAtual;
 let historiaFinal = "";
 
-function mostraPergunta(){
+function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
@@ -69,7 +62,7 @@ function mostraPergunta(){
 }
 
 function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
+    for(const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -77,13 +70,17 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacao = opcaoSelecionada.afirmacoes;
-    historiaFinal = afirmacao;
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
+function mostraResultado() {
+    caixaPerguntas.textContent = "Em 2024...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
 
 mostraPergunta();
-
